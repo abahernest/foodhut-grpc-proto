@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package dispatch;
+
+service DispatchService {
+  rpc MonitorDispatch (MonitorDispatchRequest) returns (MonitorDispatchResponse) {}
+}
+
+message MonitorDispatchRequest {
+  string orderId = 1;
+}
+
+message MonitorDispatchResponse {
+  string  status = 1;
+  repeated string error = 2;
+}
+

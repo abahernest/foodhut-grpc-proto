@@ -1,0 +1,23 @@
+
+syntax = "proto3";
+
+package order;
+
+service OrderService {
+  rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {}
+}
+
+message CreateOrderRequest {
+  string name = 1;
+  string address = 2;
+}
+
+message CreateOrderResponse {
+  string id = 1;
+  string name = 2;
+  string address = 3;
+  string status = 4;
+  bool dispatched = 5;
+  string createdAt = 6;
+  string updatedAt = 7;
+}
