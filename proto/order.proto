@@ -5,7 +5,9 @@ package order;
 
 service OrderService {
   rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse) {}
+  rpc UpdateOrder (UpdateOrderRequest) returns (UpdateOrderResponse) {}
 }
+
 
 message CreateOrderRequest {
   string name = 1;
@@ -13,6 +15,28 @@ message CreateOrderRequest {
 }
 
 message CreateOrderResponse {
+  string id = 1;
+  string name = 2;
+  string address = 3;
+  string status = 4;
+  bool dispatched = 5;
+  string createdAt = 6;
+  string updatedAt = 7;
+}
+
+enum OrderStatus {
+  pending = 0;
+  processing = 1;
+  completed = 2;
+}
+
+message UpdateOrderRequest {
+  string id = 1;
+  optional string address = 2;
+  optional OrderStatus status = 3;
+}
+
+message UpdateOrderResponse {
   string id = 1;
   string name = 2;
   string address = 3;
