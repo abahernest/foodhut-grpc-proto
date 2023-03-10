@@ -25,9 +25,9 @@ message CreateOrderResponse {
 }
 
 enum OrderStatus {
-  pending = 0;
-  processing = 1;
-  completed = 2;
+  ORDERSTATUS_PENDING = 0;
+  ORDERSTATUS_PROCESSING = 1;
+  ORDERSTATUS_COMPLETED = 2;
 }
 
 message UpdateOrderRequest {
