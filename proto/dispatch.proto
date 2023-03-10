@@ -11,7 +11,7 @@ message MonitorDispatchRequest {
 }
 
 message MonitorDispatchResponse {
-  string  status = 1;
-  repeated string error = 2;
+  int32 code = 1;
+  string message = 2;
 }
 
