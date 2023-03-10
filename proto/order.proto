@@ -24,16 +24,11 @@ message CreateOrderResponse {
   string updatedAt = 7;
 }
 
-enum OrderStatus {
-  ORDERSTATUS_PENDING = 0;
-  ORDERSTATUS_PROCESSING = 1;
-  ORDERSTATUS_COMPLETED = 2;
-}
 
 message UpdateOrderRequest {
   string id = 1;
   optional string address = 2;
-  optional OrderStatus status = 3;
+  optional string status = 3;
 }
 
 message UpdateOrderResponse {
