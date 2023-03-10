@@ -34,13 +34,5 @@ message UpdateOrderRequest {
 message UpdateOrderResponse {
   int32 code = 1;
   string message = 2;
-  message data {
-    string id = 1;
-    string name = 2;
-    string address = 3;
-    string status = 4;
-    bool dispatched = 5;
-    string createdAt = 6;
-    string updatedAt = 7;
-  }
+  map<string, CreateOrderResponse> data = 3;
 }
